@@ -4,8 +4,11 @@
 Plugin que incluye el comando /heal
 
 **Comandos**
+
 /sh reload
+
 /sh version
+
 /heal
 
 Para poder utilizar /heal se necesita el permiso:
