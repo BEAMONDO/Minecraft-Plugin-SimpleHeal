@@ -11,5 +11,4 @@ Plugin que incluye el comando /heal
 
 /heal
 
-Para poder utilizar /heal se necesita el permiso:
-simpleheal.heal
+Para poder utilizar /heal se necesita el permiso: simpleheal.heal
