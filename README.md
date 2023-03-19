@@ -3,14 +3,31 @@
 
 Plugin que incluye el comando /heal
 
-**Comandos**
+Comandos
 
-/sh reload
+/simpleheal reload, /sh reload
 
-/sh version
+Para poder utilizarlo se necesita el permiso:
 
-/heal
+simpleheal.reload
 
-Para poder utilizar /heal se necesita el permiso: 
+
+/simpleheal version, /simpleheal ver, /sh version, /sh ver
+
+Para poder utilizarlo se necesita el permiso:
+
+simpleheal.version
+
+
+/simpleheal help, /sh help
+
+Para poder utilizarlo se necesita el permiso:
+
+simpleheal.help
+
+
+/heal, /curar, /vida
+
+Para poder utilizarlo se necesita el permiso:
 
 simpleheal.heal
