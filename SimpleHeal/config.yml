@@ -1,28 +1,28 @@
-########################################################################################
-#|------------------------------------------------------------------------------------|#
-#|                                                                                    |#
-#|                                                                                    |#
-#|                                                                                    |#
-#|               |#
-#|               |#
-#|               |#
-#|                                                                                    |#
-#|                                                                                    |#
-#|                                                                                    |#
-#|      Youtube:      www.youtube.com/@davigamer1614                                  |#
-#|      Github:       https://github.com/BEAMONDO/                     |#
-#|                                                                                    |#
-#|                                                                                    |#
-#|                                                                                    |#
-#|------------------------------------------------------------------------------------|#
-########################################################################################
-
 Config:
-    mensaje-heal: true
-    permiso-texto:
-    - '&aHas sido curado'
-    no-permiso-texto:
-    - '&cNo tienes permiso para ejecutar ese comando'
-
-    
-    
+  heal-mensaje: true
+  heal-permiso-texto:
+  - '&aHas sido curado'
+  heal-no-permiso-texto:
+  - '&cNo tienes permiso para ejecutar ese comando'
+  reload-mensaje: true
+  reload-permiso-texto:
+  - '&aEl plugin ha sido recargado correctamente'
+  reload-no-permiso-texto:
+  - '&cNo tienes permiso para ejecutar ese comando'
+  help-mensaje: true
+  help-texto:
+  - '&b<-----------------&aCOMANDOS&b----------------->'
+  - '&e/sh version &7Version del plugin'
+  - '&e/sh reload &7Recargar el plugin'
+  - '&e/heal &7Recuperar vida'
+  help-no-texto:
+  - '&cNo tienes permiso para ejecutar ese comando'
+  version-mensaje: true
+  version-no-texto:
+  - '&cNo tienes permiso para ejecutar ese comando'
+  consola-texto-error: 
+  - '§cNo puedes ejecutar ese comando desde la consola'
+  comando-no-existe:
+  - '&cEse comando no existe'
+  comando-no-argumento:
+  - 'Usa /sh help para ver la lista de comandos'

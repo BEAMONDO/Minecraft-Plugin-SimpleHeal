@@ -23,32 +23,32 @@ public class ComandoHeal implements CommandExecutor{
     @Override
     public boolean onCommand(CommandSender sender, Command comando, String label, String[] args) {
         Player jugador = (Player) sender;
-        FileConfiguration messages = plugin.getConfig();
         FileConfiguration config = plugin.getConfig();
         if(sender instanceof Player && jugador.hasPermission("simpleheal.heal")){
             jugador.setHealth(20);
             jugador.setFoodLevel(20);
-            String path = "Config.mensaje-heal";
+            String path = "Config.heal-mensaje";
             if(config.getString(path).equals("true")){
-                    List<String> mensaje2 = messages.getStringList("Config.permiso-texto");
+                    List<String> mensaje2 = config.getStringList("Config.heal-permiso-texto");
                         for(int i=0;i<mensaje2.size();i++){
                             String texto = mensaje2.get(i);
                             jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName())));
                         }
                 }
-            return true;
         }
         else if(sender instanceof Player && !(jugador.hasPermission("simpleheal.heal"))){
-            List<String> mensaje = messages.getStringList("Config.no-permiso-texto");
+            List<String> mensaje = config.getStringList("Config.heal-no-permiso-texto");
                 for(int i=0;i<mensaje.size();i++){
                     String texto = mensaje.get(i);
                     jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName())));
                 }
-            return true;
+        }else{
+                List<String> mensaje = config.getStringList("Config.consola-texto-error");
+                    for(int i=0;i<mensaje.size();i++){
+                        String texto = mensaje.get(i);
+                        Bukkit.getConsoleSender().sendMessage(texto);
+                    }
         }
-        else{
-            Bukkit.getConsoleSender().sendMessage(plugin.nombre+ChatColor.WHITE+" No puedes ejecutar este comando desde la consola");         
-        }
-        return true;
+        return false;
     }
 }

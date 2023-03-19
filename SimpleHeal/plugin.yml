@@ -1,5 +1,5 @@
 main: davigamer161.simpleheal.SimpleHeal
-version: 1.0.1
+version: 1.0.3
 name: SimpleHeal
 
 commands:
@@ -12,4 +12,10 @@ commands:
 permissions:
   simpleheal.heal:
     description: Sirve para curar
-    default: false
+
+  simpleheal.reload:
+    description: Sirve para recargar el plugin
+  simpleheal.help:
+    description: Sirve para ver lista de comandos
+  simpleheal.version:
+    description: Sirve para ver la version del plugin
