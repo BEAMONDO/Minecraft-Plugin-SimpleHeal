@@ -1,5 +1,5 @@
 # SimpleHeal
- Plugin para minecraft 1.8 - 1.19.4
+ Plugin para minecraft 1.8 - 1.20.1
 
 Plugin que incluye el comando /heal
 
@@ -31,7 +31,7 @@ simpleheal.help
 
 ------------------------------
 
-/heal, /curar, /vida
+/heal
 
 Para poder utilizarlo se necesita el permiso:
 

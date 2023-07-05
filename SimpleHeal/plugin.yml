@@ -1,11 +1,10 @@
 main: davigamer161.simpleheal.SimpleHeal
-version: 1.0.3
+version: 1.1.1
 name: SimpleHeal
 
 commands:
   heal:
     description: Comando para curar
-    aliases: [curar, vida]
   simpleheal:
     description: Comando principal
     aliases: [sh]

@@ -1,0 +1,25 @@
+Config:
+  help-messaje: true
+  help-text:
+  - '&b<-----------------&aCOMANDOS&b----------------->'
+  - '&e/sh help &7Muestra este mensaje'
+  - '&e/sh version&7, &e/sh ver &7Version del plugin'
+  - '&e/sh reload &7Recargar el plugin'
+  - '&e/heal&7, &e/curar&7, &e/vida &7Recuperar vida'
+  heal-messaje: true
+  heal-text:
+  - '%plugin% &aHas sido curado'
+  reload-messaje: true
+  reload-text:
+  - '%plugin% &aEl plugin ha sido recargado correctamente'
+  version-messaje: true
+  version-text:
+  - '%plugin% &aVersion &b%version%'
+  command-no-argument: true
+  command-no-argument-text:
+  - '%plugin% &fUsa &e/sh help &fpara ver la lista de comandos'
+  no-perm: true
+  no-perm-text:
+  - '%plugin% &cNo tienes permiso para ejecutar ese comando'
+  console-error-text: 
+  - 'No puedes ejecutar ese comando desde la consola'

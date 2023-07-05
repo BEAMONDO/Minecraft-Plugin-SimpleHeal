@@ -19,14 +19,14 @@ public class SimpleHeal extends JavaPlugin{
     public SimpleHeal(){
       this.pdffile = this.getDescription();
       this.version = this.pdffile.getVersion();
-      this.nombre = ChatColor.RED+"["+ChatColor.YELLOW+this.pdffile.getName()+ChatColor.RED+"] ";
+      this.nombre = ChatColor.RED+"["+ChatColor.YELLOW+this.pdffile.getName()+ChatColor.RED+"] "+ChatColor.WHITE;
     }
     //---------------------Para cuando se activa el plugin----------------------------------//
     //------------------------------Desde aqui-----------------------------//
     public void onEnable(){
       Bukkit.getConsoleSender().sendMessage(ChatColor.BLUE+"<------------------------------------>");
-	    Bukkit.getConsoleSender().sendMessage(nombre+ChatColor.WHITE+"Ha sido activado ("+ChatColor.GREEN+"Version: "+ChatColor.YELLOW+version+ChatColor.WHITE+")");
-	    Bukkit.getConsoleSender().sendMessage(nombre+ChatColor.GREEN+"Gracias por utilizar mi plugin :)");
+	    Bukkit.getConsoleSender().sendMessage(nombre+ChatColor.WHITE+"Enabled, ("+ChatColor.GREEN+"Version: "+ChatColor.AQUA+version+ChatColor.WHITE+")");
+	    Bukkit.getConsoleSender().sendMessage(nombre+ChatColor.GREEN+"Thanks for use my plugin :)");
       Bukkit.getConsoleSender().sendMessage(ChatColor.BLUE+"<------------------------------------>");
       registrarComandos();
       registrarConfig();
@@ -38,7 +38,7 @@ public class SimpleHeal extends JavaPlugin{
     //------------------Para cuando se desactiva el plugin----------------------------------//
     //------------------------------Desde aqui-----------------------------//
     public void onDisable(){
-	    Bukkit.getConsoleSender().sendMessage(nombre+ChatColor.WHITE+"Ha sido desactivado ("+ChatColor.GREEN+"version: "+ChatColor.YELLOW+version+ChatColor.WHITE+")");
+	    Bukkit.getConsoleSender().sendMessage(nombre+ChatColor.WHITE+"Disabled, ("+ChatColor.GREEN+"Version: "+ChatColor.AQUA+version+ChatColor.WHITE+")");
     }
     //------------------------------Hasta aqui-----------------------------//
 

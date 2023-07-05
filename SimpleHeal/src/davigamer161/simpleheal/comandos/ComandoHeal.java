@@ -21,34 +21,39 @@ public class ComandoHeal implements CommandExecutor{
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command comando, String label, String[] args) {
+    public boolean onCommand(CommandSender sender, Command comando, String label, String[] args){
+        if(!(sender instanceof Player)){
+            FileConfiguration config = plugin.getConfig();
+            List<String> mensaje = config.getStringList("Config.console-error-text");
+                for(int i=0;i<mensaje.size();i++){
+                    String texto = mensaje.get(i);
+                    Bukkit.getConsoleSender().sendMessage(texto);
+                }
+        }else{
         Player jugador = (Player) sender;
         FileConfiguration config = plugin.getConfig();
         if(sender instanceof Player && jugador.hasPermission("simpleheal.heal")){
             jugador.setHealth(20);
             jugador.setFoodLevel(20);
-            String path = "Config.heal-mensaje";
-            if(config.getString(path).equals("true")){
-                    List<String> mensaje2 = config.getStringList("Config.heal-permiso-texto");
+            String path = "Config.heal-message";
+                if(config.getString(path).equals("true")){
+                    List<String> mensaje2 = config.getStringList("Config.heal-text");
                         for(int i=0;i<mensaje2.size();i++){
                             String texto = mensaje2.get(i);
-                            jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName())));
+                            jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
                         }
                 }
-        }
-        else if(sender instanceof Player && !(jugador.hasPermission("simpleheal.heal"))){
-            List<String> mensaje = config.getStringList("Config.heal-no-permiso-texto");
+        }else if(sender instanceof Player && !(jugador.hasPermission("simpleheal.heal"))){
+            String path = "Config.no-perm";
+            if(config.getString(path).equals("true")){
+            List<String> mensaje = config.getStringList("Config.no-perm-text");
                 for(int i=0;i<mensaje.size();i++){
                     String texto = mensaje.get(i);
-                    jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName())));
+                    jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
                 }
-        }else{
-                List<String> mensaje = config.getStringList("Config.consola-texto-error");
-                    for(int i=0;i<mensaje.size();i++){
-                        String texto = mensaje.get(i);
-                        Bukkit.getConsoleSender().sendMessage(texto);
-                    }
+            }
         }
+    }
         return false;
     }
 }

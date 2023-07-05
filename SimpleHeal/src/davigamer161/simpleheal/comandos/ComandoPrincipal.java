@@ -23,8 +23,8 @@ public class ComandoPrincipal implements CommandExecutor{
 
     public boolean onCommand(CommandSender sender, Command comando, String label, String[] args) {
         if(!(sender instanceof Player)){
-            FileConfiguration messages = plugin.getConfig();
-            List<String> mensaje = messages.getStringList("Config.consola-texto-error");
+            FileConfiguration config = plugin.getConfig();
+            List<String> mensaje = config.getStringList("Config.console-error-text");
                 for(int i=0;i<mensaje.size();i++){
                     String texto = mensaje.get(i);
                     Bukkit.getConsoleSender().sendMessage(texto);
@@ -32,49 +32,53 @@ public class ComandoPrincipal implements CommandExecutor{
         }
         else{
             Player jugador = (Player) sender;
-            FileConfiguration messages = plugin.getConfig();
             FileConfiguration config = plugin.getConfig();
-
-            
+        if(args.length > 0){     
 //-------------------------------------Comando version----------------------------------------------------------//
 //----------------------------------------Desde aqui---------------------------------------//
-if(args.length > 0){
     if(args[0].equalsIgnoreCase("version")){
         if(sender instanceof Player && (jugador.hasPermission("simpleheal.version"))){
-            String path = "Config.version-mensaje";
+            String path = "Config.version-message";
             if(config.getString(path).equals("true")){
-                jugador.sendMessage(ChatColor.GREEN+"Version: "+ChatColor.YELLOW+plugin.version);
-            }
-        }
-        if(sender instanceof Player && !(jugador.hasPermission("simpleheal.version"))){
-            String path = "Config.version-mensaje";
-            if(config.getString(path).equals("true")){
-                List<String> mensaje = config.getStringList("Config.version-no-texto");
+                List<String> mensaje = config.getStringList("Config.version-text");
                 for(int i=0;i<mensaje.size();i++){
                     String texto = mensaje.get(i);
-                    jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName())));
+                    jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
+                }
+            }
+            return true;
+        }if(sender instanceof Player && !(jugador.hasPermission("simpleheal.version"))){
+            String path = "Config.no-perm";
+            if(config.getString(path).equals("true")){
+                List<String> mensaje = config.getStringList("Config.no-perm-text");
+                for(int i=0;i<mensaje.size();i++){
+                    String texto = mensaje.get(i);
+                    jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
                 }
             }
         }
     }
     else if(args[0].equalsIgnoreCase("ver")){
         if(sender instanceof Player && (jugador.hasPermission("simpleheal.version"))){
-            String path = "Config.version-mensaje";
+            String path = "Config.version-message";
             if(config.getString(path).equals("true")){
-                jugador.sendMessage(ChatColor.GREEN+"Version: "+ChatColor.YELLOW+plugin.version);
-            }
-        }
-        if(sender instanceof Player && !(jugador.hasPermission("simpleheal.version"))){
-            String path = "Config.version-mensaje";
-            if(config.getString(path).equals("true")){
-                List<String> mensaje = config.getStringList("Config.version-no-texto");
+                List<String> mensaje = config.getStringList("Config.version-text");
                 for(int i=0;i<mensaje.size();i++){
                     String texto = mensaje.get(i);
-                    jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName())));
+                    jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
+                }
+            }
+            return true;
+        }if(sender instanceof Player && !(jugador.hasPermission("simpleheal.version"))){
+            String path = "Config.no-perm";
+            if(config.getString(path).equals("true")){
+                List<String> mensaje = config.getStringList("Config.no-perm-text");
+                for(int i=0;i<mensaje.size();i++){
+                    String texto = mensaje.get(i);
+                    jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
                 }
             }
         }
-        
     }
 //----------------------------------------Hasta aqui---------------------------------------//
 
@@ -84,12 +88,22 @@ if(args.length > 0){
 //----------------------------------------Desde aqui---------------------------------------//
                 else if(args[0].equalsIgnoreCase("help")){
                     if(sender instanceof Player && (jugador.hasPermission("simpleheal.help"))){
-                        String path = "Config.help-mensaje";
+                        String path = "Config.help-message";
                         if(config.getString(path).equals("true")){
-                            List<String> mensaje = messages.getStringList("Config.help-texto");
+                            List<String> mensaje = config.getStringList("Config.help-text");
                             for(int i=0;i<mensaje.size();i++){
                                 String texto = mensaje.get(i);
-                                jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName())));
+                                jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
+                            }
+                        }
+                        return true;
+                    }if(sender instanceof Player && !(jugador.hasPermission("simpleheal.help"))){
+                        String path = "Config.no-perm";
+                      if(config.getString(path).equals("true")){
+                          List<String> mensaje = config.getStringList("Config.no-perm-text");
+                         for(int i=0;i<mensaje.size();i++){
+                               String texto = mensaje.get(i);
+                              jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
                             }
                         }
                     }
@@ -100,52 +114,55 @@ if(args.length > 0){
 
  //--------------------------------------Comando reload---------------------------------------------------------//
  //----------------------------------------Desde aqui---------------------------------------//
-                else if(args[0].equalsIgnoreCase("reload")){                    
+                else if(args[0].equalsIgnoreCase("reload")){
                     if(sender instanceof Player && (jugador.hasPermission("simpleheal.reload"))){
-                        String path = "Config.reload-mensaje";
+                        String path = "Config.reload-message";
                         plugin.reloadConfig();
                         if(config.getString(path).equals("true")){
-                            List<String> mensaje = messages.getStringList("Config.reload-permiso-texto");
+                            List<String> mensaje = config.getStringList("Config.reload-text");
                             for(int i=0;i<mensaje.size();i++){
                                 String texto = mensaje.get(i);
-                                jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName())));
+                                jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
                             }
                         }
-                    }else if(sender instanceof Player && !(jugador.hasPermission("simpleheal.reload"))){
-                        List<String> mensaje = messages.getStringList("Config.reload-no-permiso-texto");
+                        return true;
+                    }if(sender instanceof Player && !(jugador.hasPermission("simpleheal.reload"))){
+                        String path = "Config.no-perm";
+                        if(config.getString(path).equals("true")){
+                            List<String> mensaje = config.getStringList("Config.no-perm-text");
                             for(int i=0;i<mensaje.size();i++){
                                 String texto = mensaje.get(i);
-                                jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName())));
+                                jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
                             }
-                        }                    
+                        } 
+                    }
+                
+                }                 
  //----------------------------------------Hasta aqui---------------------------------------//
 
-
-                    else{
-                        List<String> mensaje = messages.getStringList("Config.comando-no-existe");
-                            for(int i=0;i<mensaje.size();i++){
-                                String texto = mensaje.get(i);
-                                jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName())));
-                            }
-                        }
-            }else if(args.length > 0){
-                String path = "Config.help-mensaje";
-                if(config.getString(path).equals("false")){                    
-                }else{
-                    List<String> mensaje = messages.getStringList("Config.comando-no-argumento");
+            }else{
+                if(sender instanceof Player && (jugador.hasPermission("simpleheal.help"))){
+                String path = "Config.command-no-argument";
+                if(config.getString(path).equals("true")){
+                    List<String> mensaje = config.getStringList("Config.command-no-argument-text");
                     for(int i=0;i<mensaje.size();i++){
                         String texto = mensaje.get(i);
-                        jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName())));
+                        jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
                     }
                 }
-                }else if(args.length == 0){
-                    String path = "Config.help-mensaje";
-                    if(config.getString(path).equals("false")){                        
+                return true;
+            }else if(sender instanceof Player && !(jugador.hasPermission("simpleheal.help"))){
+               String path = "Config.no-perm";
+                if(config.getString(path).equals("true")){
+                    List<String> mensaje = config.getStringList("Config.no-perm-text");
+                    for(int i=0;i<mensaje.size();i++){
+                        String texto = mensaje.get(i);
+                        jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
                     }
                 }
             }
+            }
+            }
             return false;
         }
-        return false;
     }
-}

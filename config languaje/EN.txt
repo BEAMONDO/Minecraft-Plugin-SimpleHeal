@@ -1,7 +1,7 @@
 Config:
   help-message: true
   help-text:
-  - '&b<-----------------&aCOMMANDS&b----------------->'
+  - '&b<-----------------&aCOMMAND&b----------------->'
   - '&e/sh help &7Show this message'
   - '&e/sh version&7, &e/sh ver &7Show plugin version'
   - '&e/sh reload &7Reload plugin'
