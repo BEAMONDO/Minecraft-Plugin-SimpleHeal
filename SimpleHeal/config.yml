@@ -9,6 +9,9 @@ Config:
   heal-message: true
   heal-text:
   - '%plugin% &aYou have been healed'
+  heal-price: 100
+  no-enought-money-heal:
+  - '%plugin% &7You don`t have enough money to heal yourself'
   reload-message: true
   reload-text:
   - '%plugin% &aThe plugin has been reloaded'
@@ -21,5 +24,5 @@ Config:
   no-perm: true
   no-perm-text:
   - '%plugin% &cYou don`t have permission to use that command'
-  console-error-text: 
-  - 'You can`t use that command in console'
+  console-error-text:
+  - You can`t use that command in console

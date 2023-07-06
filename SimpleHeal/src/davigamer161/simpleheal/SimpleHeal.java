@@ -5,14 +5,17 @@ import java.io.File;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginDescriptionFile;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import davigamer161.simpleheal.comandos.ComandoHeal;
 import davigamer161.simpleheal.comandos.ComandoPrincipal;
+import net.milkbowl.vault.economy.Economy;
 
 public class SimpleHeal extends JavaPlugin{
     public String rutaConfig;
     PluginDescriptionFile pdffile;
+    private static Economy econ = null;
     public String version;
     public String nombre;
 
@@ -26,7 +29,14 @@ public class SimpleHeal extends JavaPlugin{
     public void onEnable(){
       Bukkit.getConsoleSender().sendMessage(ChatColor.BLUE+"<------------------------------------>");
 	    Bukkit.getConsoleSender().sendMessage(nombre+ChatColor.WHITE+"Enabled, ("+ChatColor.GREEN+"Version: "+ChatColor.AQUA+version+ChatColor.WHITE+")");
-	    Bukkit.getConsoleSender().sendMessage(nombre+ChatColor.GREEN+"Thanks for use my plugin :)");
+	    Bukkit.getConsoleSender().sendMessage(nombre+ChatColor.GOLD+"Thanks for use my plugin :)");
+      if(setupEconomy()){
+        Bukkit.getConsoleSender().sendMessage(nombre+ChatColor.YELLOW+"Vault "+ChatColor.GREEN+"Found");
+      }else{
+        Bukkit.getConsoleSender().sendMessage(nombre+ChatColor.RED+"YOU NEED VAULT PLUGIN");
+        Bukkit.getConsoleSender().sendMessage(nombre+ChatColor.RED+"https://dev.bukkit.org/projects/vault");
+      }
+	    Bukkit.getConsoleSender().sendMessage(nombre+ChatColor.YELLOW+"Made by "+ChatColor.LIGHT_PURPLE+"davigamer161");
       Bukkit.getConsoleSender().sendMessage(ChatColor.BLUE+"<------------------------------------>");
       registrarComandos();
       registrarConfig();
@@ -42,7 +52,20 @@ public class SimpleHeal extends JavaPlugin{
     }
     //------------------------------Hasta aqui-----------------------------//
 
-
+    private boolean setupEconomy(){
+      if(getServer().getPluginManager().getPlugin("Vault") == null){
+        return false;
+      }
+      RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
+      if(rsp == null){
+        return false;
+      }
+      econ = rsp.getProvider();
+      return econ != null;
+    }
+    public Economy getEconomy(){
+      return this.econ;
+    }
 
     //-----------------------Para registrar comandos----------------------------------------//
     //------------------------------Desde aqui-----------------------------//

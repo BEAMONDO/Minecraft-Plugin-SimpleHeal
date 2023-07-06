@@ -12,7 +12,6 @@ import org.bukkit.entity.Player;
 
 import davigamer161.simpleheal.SimpleHeal;
 
-
 public class ComandoPrincipal implements CommandExecutor{
 
     private SimpleHeal plugin;
@@ -58,30 +57,8 @@ public class ComandoPrincipal implements CommandExecutor{
             }
         }
     }
-    else if(args[0].equalsIgnoreCase("ver")){
-        if(sender instanceof Player && (jugador.hasPermission("simpleheal.version"))){
-            String path = "Config.version-message";
-            if(config.getString(path).equals("true")){
-                List<String> mensaje = config.getStringList("Config.version-text");
-                for(int i=0;i<mensaje.size();i++){
-                    String texto = mensaje.get(i);
-                    jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
-                }
-            }
-            return true;
-        }if(sender instanceof Player && !(jugador.hasPermission("simpleheal.version"))){
-            String path = "Config.no-perm";
-            if(config.getString(path).equals("true")){
-                List<String> mensaje = config.getStringList("Config.no-perm-text");
-                for(int i=0;i<mensaje.size();i++){
-                    String texto = mensaje.get(i);
-                    jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
-                }
-            }
-        }
-    }
 //----------------------------------------Hasta aqui---------------------------------------//
-
+    
                 
 
 //---------------------------------------Comando help--------------------------------------------------------//

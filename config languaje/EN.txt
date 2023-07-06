@@ -9,6 +9,9 @@ Config:
   heal-message: true
   heal-text:
   - '%plugin% &aYou have been healed'
+  heal-price: 100     #Need vault plugin for this
+  no-enought-money-heal:
+  - '%plugin% &7You don`t have enough money to heal yourself'
   reload-message: true
   reload-text:
   - '%plugin% &aThe plugin has been reloaded'

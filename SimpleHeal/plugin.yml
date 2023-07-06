@@ -1,8 +1,12 @@
 main: davigamer161.simpleheal.SimpleHeal
-version: 1.1.1
+version: 1.2.1
 name: SimpleHeal
+softdepend: [Vault]
 
 commands:
+  simpleheal.*:
+    default: op
+    description: Todos los permisos
   heal:
     description: Comando para curar
   simpleheal:
@@ -11,7 +15,8 @@ commands:
 permissions:
   simpleheal.heal:
     description: Sirve para curar
-
+  simpleheal.heal.free:
+    description: Sirve para curar gratis
   simpleheal.reload:
     description: Sirve para recargar el plugin
   simpleheal.help:
