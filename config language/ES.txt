@@ -1,21 +1,21 @@
 Config:
-  help-messaje: true
+  help-message: true
   help-text:
   - '&b<-----------------&aCOMANDOS&b----------------->'
   - '&e/sh help &7Muestra este mensaje'
   - '&e/sh version &7Version del plugin'
   - '&e/sh reload &7Recargar el plugin'
   - '&e/heal &7Recuperar vida'
-  heal-messaje: true
+  heal-message: true
   heal-text:
   - '%plugin% &aHas sido curado'
   heal-price: 100     #Es necesario el plugin Vault para esto
   no-enought-money-heal:
   - '%plugin% &7No tienes suficiente dinero para curarte'
-  reload-messaje: true
+  reload-message: true
   reload-text:
-  - '%plugin% &aEl plugin ha sido recargado correctamente'
-  version-messaje: true
+  - '%plugin% &aEl plugin ha sido recargado'
+  version-message: true
   version-text:
   - '%plugin% &aVersion &b%version%'
   command-no-argument: true
