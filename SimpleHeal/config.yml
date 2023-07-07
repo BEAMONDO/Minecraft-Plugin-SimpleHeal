@@ -3,7 +3,7 @@ Config:
   help-text:
   - '&b<-----------------&aCOMMANDS&b----------------->'
   - '&e/sh help &7Show this message'
-  - '&e/sh version&7, &e/sh ver &7Show plugin version'
+  - '&e/sh version&7 &7Show plugin version'
   - '&e/sh reload &7Reload plugin'
   - '&e/heal &7Heal you'
   heal-message: true

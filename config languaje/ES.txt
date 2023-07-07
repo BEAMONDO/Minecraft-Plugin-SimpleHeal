@@ -3,9 +3,9 @@ Config:
   help-text:
   - '&b<-----------------&aCOMANDOS&b----------------->'
   - '&e/sh help &7Muestra este mensaje'
-  - '&e/sh version&7, &e/sh ver &7Version del plugin'
+  - '&e/sh version &7Version del plugin'
   - '&e/sh reload &7Recargar el plugin'
-  - '&e/heal&7, &e/curar&7, &e/vida &7Recuperar vida'
+  - '&e/heal &7Recuperar vida'
   heal-messaje: true
   heal-text:
   - '%plugin% &aHas sido curado'
