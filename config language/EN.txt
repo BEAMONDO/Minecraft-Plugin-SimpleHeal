@@ -1,17 +1,16 @@
 Config:
   help-message: true
   help-text:
-  - '&b<-----------------&aCOMMAND&b----------------->'
+  - '&b<-----------------&aCOMMANDS&b----------------->'
   - '&e/sh help &7Show this message'
   - '&e/sh version &7Show plugin version'
   - '&e/sh reload &7Reload plugin'
-  - '&e/heal &7Heal you'
+  - '&e/heal <player> &7Heal player'
   heal-message: true
   heal-text:
   - '%plugin% &aYou have been healed'
-  heal-price: 100     #Need vault plugin for this
-  no-enought-money-heal:
-  - '%plugin% &7You don`t have enough money to heal yourself'
+  no-perm-heal-others-text:
+  - '%plugin% &f%target% &ccan`t be healed'
   reload-message: true
   reload-text:
   - '%plugin% &aThe plugin has been reloaded'
@@ -24,5 +23,5 @@ Config:
   no-perm: true
   no-perm-text:
   - '%plugin% &cYou don`t have permission to use that command'
-  console-error-text: 
-  - 'You can`t use that command in console'
+  console-error-text:
+  - You can`t use that command in console

@@ -3,15 +3,14 @@ Config:
   help-text:
   - '&b<-----------------&aCOMMANDS&b----------------->'
   - '&e/sh help &7Show this message'
-  - '&e/sh version&7 &7Show plugin version'
+  - '&e/sh version&7, &e/sh ver &7Show plugin version'
   - '&e/sh reload &7Reload plugin'
-  - '&e/heal &7Heal you'
+  - '&e/heal <player> &7Heal player'
   heal-message: true
   heal-text:
   - '%plugin% &aYou have been healed'
-  heal-price: 100
-  no-enought-money-heal:
-  - '%plugin% &7You don`t have enough money to heal yourself'
+  no-perm-heal-others-text:
+  - '%plugin% &f%target% &ccan`t be healed'
   reload-message: true
   reload-text:
   - '%plugin% &aThe plugin has been reloaded'

@@ -5,13 +5,12 @@ Config:
   - '&e/sh help &7Muestra este mensaje'
   - '&e/sh version &7Version del plugin'
   - '&e/sh reload &7Recargar el plugin'
-  - '&e/heal &7Recuperar vida'
+  - '&e/heal <player> &7Recuperar vida a un jugador'
   heal-message: true
   heal-text:
   - '%plugin% &aHas sido curado'
-  heal-price: 100     #Es necesario el plugin Vault para esto
-  no-enought-money-heal:
-  - '%plugin% &7No tienes suficiente dinero para curarte'
+  no-perm-heal-others-text:
+  - '%plugin% &f%target% &cno puede ser curado'
   reload-message: true
   reload-text:
   - '%plugin% &aEl plugin ha sido recargado'
