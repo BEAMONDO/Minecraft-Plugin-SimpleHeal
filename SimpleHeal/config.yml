@@ -9,8 +9,6 @@ Config:
   heal-message: true
   heal-text:
   - '%plugin% &aYou have been healed'
-  no-perm-heal-others-text:
-  - '%plugin% &f%target% &ccan`t be healed'
   reload-message: true
   reload-text:
   - '%plugin% &aThe plugin has been reloaded'
