@@ -18,14 +18,14 @@
 # ################################################################################## #
 
 
-#   help-message: activar o desactivar el mensaje del comando "/sh help"
-#   reload-message: activar o desactivar el mensaje del comando "/sh reload"
-#   version-message: activar o desactivar el mensaje del comando "/sh version"
-#   heal-message: activar o desactivar el mensaje del comando "/heal" y "/heal <player>"
-#   pay-to-heal: activar o desactivar la opcion de pagar para curar (si se activa es necesario el plugin Vault)
-#   heal-price: cantidad a pagar al usar "/heal" si la opcion (pay-to-heal) esta activa
-#   no-argument-message: activar o desactivar el mensaje del comando "/sh" en el caso de no tener ningun argumento
-#   no-perm-message: activar o desactivar el mensaje para cuando usas un comando y no tienes permiso
+#   help-message: enable or disable the command message "/sh help"
+#   reload-message: enable or disable the command message "/sh reload"
+#   version-message: enable or disable the command message "/sh version"
+#   heal-message: enable or disable the command message "/heal" and "/heal <player>"
+#   pay-to-heal: enable or disable the option to pay to heal (if enable is necessary the plugin Vault)
+#   heal-price: amount to pay if use "/heal" command if (pay-to-heal) is enable
+#   no-argument-message: enable or disable the command message "/sh" if it not have any argument
+#   no-perm-message: enable or disable message when use a command and don`t have permission
 
 
 Config:
