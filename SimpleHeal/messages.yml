@@ -1,25 +1,26 @@
-Config:
-  help-message: true
-  help-text:
+Messages:
+  help:
   - '&b<-----------------&aCOMMANDS&b----------------->'
   - '&e/sh help &7Show this message'
   - '&e/sh version &7Show plugin version'
-  - '&e/sh reload &7Reload plugin'
+  - '&e/sh reload &7Reload plugin config'
+  - '&e/heal &7Heal you'
   - '&e/heal <player> &7Heal player'
-  heal-message: true
-  heal-text:
+  heal:
   - '%plugin% &aYou have been healed'
-  reload-message: true
-  reload-text:
+  no-enought-money-to-heal:
+  - '%plugin% &cYou don`t have enough money to heal yourself'
+  heal-others-text:
+  - '%plugin% &aYou healed &6%target%'
+  no-enought-money-to-heal-others:
+  - '%plugin% &cYou don`t have enough money to heal &6%target%'
+  reload:
   - '%plugin% &aThe plugin has been reloaded'
-  version-message: true
-  version-text:
+  version:
   - '%plugin% &aPlugin version: &b%version%'
-  command-no-argument: true
-  command-no-argument-text:
+  command-no-argument:
   - '%plugin% &fUse &e/sh help &fto see the command list'
-  no-perm: true
-  no-perm-text:
+  no-perm:
   - '%plugin% &cYou don`t have permission to use that command'
-  console-error-text:
+  console-error:
   - You can`t use that command in console

@@ -1,25 +1,26 @@
-Config:
-  help-message: true
-  help-text:
+Messages:
+  help:
   - '&b<-----------------&aCOMANDOS&b----------------->'
   - '&e/sh help &7Muestra este mensaje'
   - '&e/sh version &7Version del plugin'
   - '&e/sh reload &7Recargar el plugin'
+  - '&e/heal &7Recuperar vida'
   - '&e/heal <player> &7Recuperar vida a un jugador'
-  heal-message: true
-  heal-text:
+  heal:
   - '%plugin% &aHas sido curado'
-  reload-message: true
-  reload-text:
+  no-enought-money-to-heal:
+  - '%plugin% &cNo tienes suficiente dinero para curarte'
+  heal-others-text:
+  - '%plugin% &aHas curado a &6%target%'
+  no-enought-money-to-heal-others:
+  - '%plugin% &cNo tienes suficiente dinero para curar a &6%target%'
+  reload:
   - '%plugin% &aEl plugin ha sido recargado'
-  version-message: true
-  version-text:
+  version:
   - '%plugin% &aVersion &b%version%'
-  command-no-argument: true
-  command-no-argument-text:
+  command-no-argument:
   - '%plugin% &fUsa &e/sh help &fpara ver la lista de comandos'
-  no-perm: true
-  no-perm-text:
+  no-perm:
   - '%plugin% &cNo tienes permiso para ejecutar ese comando'
-  console-error-text: 
-  - 'No puedes ejecutar ese comando desde la consola'
+  console-error: 
+  - No puedes ejecutar ese comando desde la consola
