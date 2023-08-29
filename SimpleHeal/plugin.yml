@@ -1,5 +1,5 @@
 main: davigamer161.simpleheal.SimpleHeal
-version: 1.3.2
+version: 1.4.1
 name: SimpleHeal
 softdepend: [Vault]
 
@@ -23,3 +23,7 @@ permissions:
     description: Sirve para ver lista de comandos
   simpleheal.version:
     description: Sirve para ver la version del plugin
+  simpleheal.econ.exempt:
+    description: Sirve para no pagar al usar /heal
+  simpleheal.econ.exempt.others:
+    description: Sirve para no pagar al usar /heal para otros

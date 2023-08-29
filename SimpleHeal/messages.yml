@@ -7,13 +7,14 @@ Messages:
   - '&e/heal &7Heal you'
   - '&e/heal <player> &7Heal player'
   heal:
-  - '%plugin% &aYou have been healed'
-  no-enought-money-to-heal:
-  - '%plugin% &cYou don`t have enough money to heal yourself'
-  heal-others-text:
-  - '%plugin% &aYou healed &6%target%'
-  no-enought-money-to-heal-others:
-  - '%plugin% &cYou don`t have enough money to heal &6%target%'
+    heal:
+    - '%plugin% &aYou have been healed'
+    no-money-to-heal:
+    - '%plugin% &cYou don`t have enough money to heal yourself'
+    heal-others:
+    - '%plugin% &aYou healed &6%target%'
+    no-money-to-heal-others:
+    - '%plugin% &cYou don`t have enough money to heal &6%target%'
   reload:
   - '%plugin% &aThe plugin has been reloaded'
   version:

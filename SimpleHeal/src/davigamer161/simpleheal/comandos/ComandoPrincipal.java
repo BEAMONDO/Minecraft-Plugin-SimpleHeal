@@ -115,10 +115,10 @@ public class ComandoPrincipal implements CommandExecutor{
                                 jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
                             }
                         } 
-                    }               
+                    }      
+                }         
  //----------------------------------------Hasta aqui---------------------------------------//
 
-            }
         }else{
                 if(sender instanceof Player && (jugador.hasPermission("simpleheal.help"))){
                 String path = "Config.no-argument-message";

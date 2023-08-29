@@ -33,7 +33,11 @@ public class ComandoHeal implements CommandExecutor{
 					Economy econ = plugin.getEconomy();
         			double dinero = econ.getBalance(jugador);
        				int precio = Integer.valueOf(config.getString("Config.heal-price"));
-					if(dinero >=precio){
+					if(jugador.hasPermission("simpleheal.econ.exempt")){
+						jugador.setHealth(20);
+						jugador.setFoodLevel(20);
+						healMethod(jugador);
+					}else if(dinero >=precio){
 						econ.withdrawPlayer(jugador, precio);
 						jugador.setHealth(20);
 						jugador.setFoodLevel(20);
@@ -41,7 +45,7 @@ public class ComandoHeal implements CommandExecutor{
 					}else{
 						String path = "Config.heal-message";
 						if(config.getString(path).equals("true")){
-							List<String> mensaje = messages.getStringList("Messages.no-enought-money-to-heal");
+							List<String> mensaje = messages.getStringList("Messages.heal.no-money-to-heal");
 							for(int i=0;i<mensaje.size();i++){
 								String texto = mensaje.get(i);
 								jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
@@ -61,7 +65,20 @@ public class ComandoHeal implements CommandExecutor{
 					Economy econ = plugin.getEconomy();
         			double dinero = econ.getBalance(jugador);
        				int precio = Integer.valueOf(config.getString("Config.heal-price"));
-					if(dinero >=precio){
+					if(jugador.hasPermission("simpleheal.econ.exempt.others")){
+						Player target = Bukkit.getPlayer(args[0]);
+                		target.setHealth(20);
+               			target.setFoodLevel(20);
+						healMethod(target);
+						String path = "Config.heal-message";
+						if(config.getString(path).equals("true")){
+							List<String> mensaje = messages.getStringList("Messages.heal.heal-others");
+							for(int i=0;i<mensaje.size();i++){
+								String texto = mensaje.get(i);
+								jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version).replaceAll("%target%", target.getName())));
+							}
+						}
+					}else if(dinero >=precio){
 						Player target = Bukkit.getPlayer(args[0]);
 						econ.withdrawPlayer(jugador, precio);
 						jugador.setHealth(20);
@@ -69,7 +86,7 @@ public class ComandoHeal implements CommandExecutor{
 						healMethod(target);
 						String path = "Config.heal-message";
 						if(config.getString(path).equals("true")){
-							List<String> mensaje = messages.getStringList("Messages.heal-others-text");
+							List<String> mensaje = messages.getStringList("Messages.heal.heal-others");
 							for(int i=0;i<mensaje.size();i++){
 								String texto = mensaje.get(i);
 								jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version).replaceAll("%target%", target.getName())));
@@ -79,7 +96,7 @@ public class ComandoHeal implements CommandExecutor{
 						String path = "Config.heal-message";
 						if(config.getString(path).equals("true")){
 							Player target = Bukkit.getPlayer(args[0]);
-							List<String> mensaje = messages.getStringList("Messages.no-enought-money-to-heal-others");
+							List<String> mensaje = messages.getStringList("Messages.heal.no-money-to-heal-others");
 							for(int i=0;i<mensaje.size();i++){
 								String texto = mensaje.get(i);
 								jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version).replaceAll("%target%", target.getName())));
@@ -93,7 +110,7 @@ public class ComandoHeal implements CommandExecutor{
 		        healMethod(target);
 				String path = "Config.heal-message";
 				if(config.getString(path).equals("true")){
-					List<String> mensaje = messages.getStringList("Messages.heal-others-text");
+					List<String> mensaje = messages.getStringList("Messages.heal.heal-others");
 					for(int i=0;i<mensaje.size();i++){
 						String texto = mensaje.get(i);
 						jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version).replaceAll("%target%", target.getName())));
@@ -111,7 +128,7 @@ public class ComandoHeal implements CommandExecutor{
 		FileConfiguration messages = plugin.getMessages();
 		String path = "Config.heal-message";
     	if(config.getString(path).equals("true")){
-            List<String> mensaje = messages.getStringList("Messages.heal");
+            List<String> mensaje = messages.getStringList("Messages.heal.heal");
             for(int i=0;i<mensaje.size();i++){
                 String texto = mensaje.get(i);
                 jugador.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", jugador.getName()).replaceAll("%plugin%", plugin.nombre).replaceAll("%version%", plugin.version)));
@@ -121,7 +138,7 @@ public class ComandoHeal implements CommandExecutor{
 	private void noPermMethod(Player jugador){
 		FileConfiguration config = plugin.getConfig();
 		FileConfiguration messages = plugin.getMessages();
-		String path = "Config.no-perm.message";
+		String path = "Config.no-perm-message";
 		if(config.getString(path).equals("true")){
 			List<String> mensaje = messages.getStringList("Messages.no-perm");
 			for(int i=0;i<mensaje.size();i++){
