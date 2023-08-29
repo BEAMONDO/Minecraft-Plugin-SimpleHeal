@@ -1,10 +1,13 @@
 package davigamer161.simpleheal;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -25,6 +28,7 @@ public class SimpleHeal extends JavaPlugin{
     PluginDescriptionFile pdffile;
     private static Economy econ = null;
     public String version;
+    public String latestversion;
     public String nombre;
 
     public SimpleHeal(){
@@ -48,6 +52,7 @@ public class SimpleHeal extends JavaPlugin{
       registrarComandos();
       registrarConfig();
       registrarMensajes();
+      updateChecker();
     }
     //------------------------------Hasta aqui-----------------------------//
 
@@ -144,5 +149,30 @@ public class SimpleHeal extends JavaPlugin{
     public Economy getEconomy(){
       return this.econ;
     }
+    //------------------------------Hasta aqui-----------------------------//
+
+
+
+    //-------------------------------Para auto actualizar--------------------------------------//
+    //------------------------------Desde aqui-----------------------------//
+    public void updateChecker(){		  
+		  try {
+			  HttpURLConnection con = (HttpURLConnection) new URL(
+	                  "https://api.spigotmc.org/legacy/update.php?resource=108687").openConnection();
+	          int timed_out = 1250;
+	          con.setConnectTimeout(timed_out);
+	          con.setReadTimeout(timed_out);
+	          latestversion = new BufferedReader(new InputStreamReader(con.getInputStream())).readLine();
+	          if (latestversion.length() <= 7) {
+	        	  if(!version.equals(latestversion)){
+	        		  Bukkit.getConsoleSender().sendMessage(nombre+ChatColor.RED +"There is a new version available. "+ChatColor.YELLOW+
+	        				  "("+ChatColor.GRAY+latestversion+ChatColor.YELLOW+")");
+	        		  Bukkit.getConsoleSender().sendMessage(nombre+ChatColor.RED+"You can download it at: "+ChatColor.WHITE+"https://www.spigotmc.org/resources/108687/");  
+	        	  }      	  
+	          }
+	      } catch (Exception ex) {
+	    	  Bukkit.getConsoleSender().sendMessage(nombre + ChatColor.RED +"Error while checking update.");
+	      }
+	  }
     //------------------------------Hasta aqui-----------------------------//
 }
