@@ -1,5 +1,5 @@
 main: davigamer161.simpleheal.SimpleHeal
-version: 1.4.2
+version: 1.4.3
 name: SimpleHeal
 softdepend: [Vault]
 
@@ -14,7 +14,7 @@ commands:
     aliases: [sh]
 permissions:
   simpleheal.heal:
-    description: Sirve para curar
+    description: Sirve para curarte
   simpleheal.heal.others:
     description: Sirve para curar a otros
   simpleheal.reload:
