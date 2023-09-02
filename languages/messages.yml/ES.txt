@@ -1,26 +1,20 @@
 Messages:
+  heal:
+    heal: '%plugin% &aHas sido curado'
+    heal-others: '%plugin% &aHas curado a &6%target%'
+    no-enought-money: '%plugin% &cNo tienes suficiente dinero para curarte'
+    no-enought-money-others: '%plugin% &cNo tienes suficiente dinero para curar a &6%target%'
   help:
   - '&b<-----------------&aCOMANDOS&b----------------->'
   - '&e/sh help &7Muestra este mensaje'
   - '&e/sh version &7Version del plugin'
   - '&e/sh reload &7Recargar el plugin'
+  - '&e/sh plugin &7Muestra el link de descarga del plugin'
   - '&e/heal &7Recuperar vida'
   - '&e/heal <player> &7Recuperar vida a un jugador'
-  heal:
-  - '%plugin% &aHas sido curado'
-  no-enought-money-to-heal:
-  - '%plugin% &cNo tienes suficiente dinero para curarte'
-  heal-others-text:
-  - '%plugin% &aHas curado a &6%target%'
-  no-enought-money-to-heal-others:
-  - '%plugin% &cNo tienes suficiente dinero para curar a &6%target%'
-  reload:
-  - '%plugin% &aEl plugin ha sido recargado'
-  version:
-  - '%plugin% &aVersion &b%version%'
-  command-no-argument:
-  - '%plugin% &fUsa &e/sh help &fpara ver la lista de comandos'
-  no-perm:
-  - '%plugin% &cNo tienes permiso para ejecutar ese comando'
-  console-error: 
-  - No puedes ejecutar ese comando desde la consola
+  reload: '%plugin% &aEl plugin ha sido recargado'
+  version: '%plugin% &aVersion &b%version%'
+  command-no-argument: '%plugin% &fUsa &e/sh help &fpara ver la lista de comandos'
+  no-perm: '%plugin% &cNo tienes permiso para ejecutar ese comando'
+  console-error:  No puedes ejecutar ese comando desde la consola
+  update-checker: '%plugin% &bHay una nueva version &e(&f%latestversion%&e)&b. Descargala aqui: &7https://www.spigotmc.org/resources/108687/'

@@ -1,4 +1,3 @@
-
 # ################################################################################## #
 # +--------------------------------------------------------------------------------+ #
 # |                                                                                | #
@@ -19,22 +18,19 @@
 # ################################################################################## #
 
 
-#   help-message: activar o desactivar el mensaje del comando "/sh help"
-#   reload-message: activar o desactivar el mensaje del comando "/sh reload"
-#   version-message: activar o desactivar el mensaje del comando "/sh version"
-#   heal-message: activar o desactivar el mensaje del comando "/heal" y "/heal <player>"
-#   pay-to-heal: activar o desactivar la opcion de pagar para curar (si se activa es necesario el plugin Vault)
-#   heal-price: cantidad a pagar al usar "/heal" si la opcion (pay-to-heal) esta activa
+#   update-message: activar o desactivar el mensaje de actualizacion disponible al entrar al servidor
 #   no-argument-message: activar o desactivar el mensaje del comando "/sh" en el caso de no tener ningun argumento
 #   no-perm-message: activar o desactivar el mensaje para cuando usas un comando y no tienes permiso
 
+#   heal-message: activar o desactivar el mensaje del comando "/heal" y "/heal <player>"
+#   pay-to-heal: activar o desactivar la opcion de pagar para curar (si se activa es necesario el plugin Vault y EssentialsX)
+#   heal-price: cantidad a pagar al usar "/heal" si la opcion (pay-to-heal) esta activa
+
 
 Config:
-  help-message: true
-  reload-message: true
-  version-message: true
+  update-message: true
+  no-argument-message: true
+  no-perm-message: true
   heal-message: true
   pay-to-heal: false
   heal-price: 1000
-  no-argument-message: true
-  no-perm-message: true

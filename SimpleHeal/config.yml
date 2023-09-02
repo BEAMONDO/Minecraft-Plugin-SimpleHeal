@@ -18,22 +18,19 @@
 # ################################################################################## #
 
 
-#   help-message: enable or disable the command message "/sh help"
-#   reload-message: enable or disable the command message "/sh reload"
-#   version-message: enable or disable the command message "/sh version"
-#   heal-message: enable or disable the command message "/heal" and "/heal <player>"
-#   pay-to-heal: enable or disable the option to pay to heal (if enable is necessary the plugin Vault)
-#   heal-price: amount to pay if use "/heal" command if (pay-to-heal) is enable
+#   update-message: enable or disable the update message when enter in server
 #   no-argument-message: enable or disable the command message "/sh" if it not have any argument
 #   no-perm-message: enable or disable message when use a command and don`t have permission
 
+#   heal-message: enable or disable the command message "/heal" and "/heal <player>"
+#   pay-to-heal: enable or disable the option to pay to heal (if enable is necessary the plugin Vault and EssentialsX)
+#   heal-price: amount to pay if use "/heal" command if (pay-to-heal) is enable
+
 
 Config:
-  help-message: true
-  reload-message: true
-  version-message: true
+  update-message: true
+  no-argument-message: true
+  no-perm-message: true
   heal-message: true
   pay-to-heal: false
   heal-price: 1000
-  no-argument-message: true
-  no-perm-message: true
