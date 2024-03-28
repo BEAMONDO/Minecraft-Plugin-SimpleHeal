@@ -2,8 +2,10 @@ Messages:
   heal:
     heal: '%plugin% &aHas sido curado'
     heal-others: '%plugin% &aHas curado a &6%target%'
-    no-enought-money: '%plugin% &cNo tienes suficiente dinero para curarte'
-    no-enought-money-others: '%plugin% &cNo tienes suficiente dinero para curar a &6%target%'
+    not-enought-money: '%plugin% &cNo tienes suficiente dinero para curarte'
+    not-enought-money-others: '%plugin% &cNo tienes suficiente dinero para curar a &6%target%'
+    wait-time-heal: '%plugin% &cDebes esperar &6%seconds-left% &csegundos para usar ese comando'
+    wait-time-heal-others: '%plugin% &cDebes esperar &6%seconds-left% &csegundos para curar a &6%target%'
   help:
   - '&b<-----------------&aCOMANDOS&b----------------->'
   - '&e/sh help &7Muestra este mensaje'

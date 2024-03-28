@@ -22,9 +22,12 @@
 #   no-argument-message: enable or disable the command message "/sh" if it not have any argument
 #   no-perm-message: enable or disable message when use a command and don`t have permission
 
-#   heal-message: enable or disable the command message "/heal" and "/heal <player>"
+#   heal-message: enable or disable the command message "/heal"
 #   pay-to-heal: enable or disable the option to pay to heal (if enable is necessary the plugin Vault and EssentialsX)
-#   heal-price: amount to pay if use "/heal" command if (pay-to-heal) is enable
+#   pay-to-heal-price: amount to pay if use "/heal" command if (pay-to-heal) is enable
+
+#   wait-to-heal: enable or disable the option to wait to heal
+#   wait-to-heal-time: amount of time (in seconds) you must wait to use "/heal" command
 
 
 Config:
@@ -33,4 +36,6 @@ Config:
   no-perm-message: true
   heal-message: true
   pay-to-heal: false
-  heal-price: 1000
+  pay-to-heal-price: 1000
+  wait-to-heal: true
+  wait-to-heal-time: 300

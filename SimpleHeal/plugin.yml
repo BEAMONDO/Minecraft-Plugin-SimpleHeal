@@ -1,5 +1,5 @@
 main: davigamer161.simpleheal.SimpleHeal
-version: 2.0.1
+version: 3.0.1
 name: SimpleHeal
 softdepend: [Vault]
 
@@ -31,3 +31,5 @@ permissions:
     description: Sirve para curarte
   simpleheal.heal.others:
     description: Sirve para curar a otros
+  simpleheal.wait-to-heal.exempt:
+    description: Sirve no esperar al usar /heal

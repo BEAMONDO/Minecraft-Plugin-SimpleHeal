@@ -22,9 +22,12 @@
 #   no-argument-message: activar o desactivar el mensaje del comando "/sh" en el caso de no tener ningun argumento
 #   no-perm-message: activar o desactivar el mensaje para cuando usas un comando y no tienes permiso
 
-#   heal-message: activar o desactivar el mensaje del comando "/heal" y "/heal <player>"
+#   heal-message: activar o desactivar el mensaje del comando "/heal"
 #   pay-to-heal: activar o desactivar la opcion de pagar para curar (si se activa es necesario el plugin Vault y EssentialsX)
-#   heal-price: cantidad a pagar al usar "/heal" si la opcion (pay-to-heal) esta activa
+#   pay-to-heal-price: cantidad a pagar al usar "/heal" si la opcion (pay-to-heal) esta activa
+
+#   wait-to-heal: activar o desactiva la opcion de esperar para curar
+#   wait-to-heal-time: cantidad de tiempo (en segundos) que debes esperar para usar el comando "/heal"
 
 
 Config:
@@ -33,4 +36,6 @@ Config:
   no-perm-message: true
   heal-message: true
   pay-to-heal: false
-  heal-price: 1000
+  pay-to-heal-price: 1000
+  wait-to-heal: true
+  wait-to-heal-time: 300
